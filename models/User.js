@@ -1,6 +1,7 @@
 const mongoose = require("mongoose")
+const Schema = mongoose.Schema
 
-const UserSchema = new mongoose.Schema({
+const UserSchema = new Schema({
     username:{
         type:String,
         require: true,
@@ -18,30 +19,31 @@ const UserSchema = new mongoose.Schema({
         type:String,
         required:true,
         min:6,
-    },
-    profilePicture:{
-        type:String,
-        default:""
-    },
-    coverPicture:{
-        type:String,
-        default:""
-    },
-    followers:{
-        type:Array,
-        default:[]
-    },
-    followins:{
-        type:Array,
-        default:[]
-    },
-    isAdmin:{
-        type:Boolean,
-        default: false,
-    },
+    }
+    // profilePicture:{
+    //     type:String,
+    //     default:""
+    // },
+    // coverPicture:{
+    //     type:String,
+    //     default:""
+    // },
+    // followers:{
+    //     type:Array,
+    //     default:[]
+    // },
+    // followins:{
+    //     type:Array,
+    //     default:[]
+    // },
+    // isAdmin:{
+    //     type:Boolean,
+    //     default: false,
+    // },
 },
 { timestamps: true }
 );
 
-
-module.exports = mongoose.model("User", UserSchema);
+// module.exports = mongoose.model("User", UserSchema);
+const user = mongoose.model("User", UserSchema);
+module.exports = user
